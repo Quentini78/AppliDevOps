@@ -7,12 +7,12 @@ pipeline
         choice(name: 'MOIS', choices: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet','Aout', 'Septembre', 'Octobre','Novembre', 'Decembre'], description: 'Choisissez le mois')
         choice(name: 'DATE_DU_JOUR', choices: ['1', '2', '3', '4', '5', '6', '7','8', '9', '10','11', '12','13', '14', '15', '16', '17', '18', '19','20', '21', '22','23', '24','25','26','27','28','29','30','31'], description: 'Quel est la date du jour ?')
         choice(name: 'CHALLENGES', choices: ["Janvier | Mettre de l'ordre dans ses idees", "Janvier | Acheter un journal intime", "Janvier | Prendre le temps pour ecrire", "Fevrier | Repeindre les  murs", "Fevrier | Revisiter l\'agencement des meubles",
-              "Fevrier | Faire un grand menage", "Mars | Prendre un temps pour mediter", "Mars | Manger plus sainement", "Mars | Commencer à faire du sport", "Avril | Faire des cadeaux à ses proches", 
-              "Avril | Souhaiter des paroles aimables et pleines d\'espoir", "Avril | Souriez aux gens", "Mai | Commencez à prendre des cours d\'echecs", "Mai | Faire un voyage avec un membre de votre famille", "Mai | Prenez des cours de salsa",
-              "Mai | Terminer un marathon", "Juin | Sortir diner avec des proches", "Juin | Se reunir en famille", "Juin | Se balader avec des amis", "Juillet | Aller à des festivals", 
+              "Fevrier | Faire un grand menage", "Mars | Prendre un temps pour mediter", "Mars | Manger plus sainement", "Mars | Commencer a faire du sport", "Avril | Faire des cadeaux a ses proches", 
+              "Avril | Souhaiter des paroles aimables et pleines d\'espoir", "Avril | Souriez aux gens", "Mai | Commencez a prendre des cours d\'echecs", "Mai | Faire un voyage avec un membre de votre famille", "Mai | Prenez des cours de salsa",
+              "Mai | Terminer un marathon", "Juin | Sortir diner avec des proches", "Juin | Se reunir en famille", "Juin | Se balader avec des amis", "Juillet | Aller a des festivals", 
               "Juillet | Apprendre a danser", "Juillet | Apprendre a chanter", "Aout | Admirer le lever du soleil", "Aout | Regarder les etoiles", "Aout | Prenez un bain de minuit",
-              "Septembre | Aller dans un lieu inexplore", "Septembre | Voyager à travers le monde", "Septembre | Faire une randonnee", "Octobre | Acquerir de nouvelles connaissances", "Octobre | Formez-vous sur internet",
-              "Octobre | Prenez des cours particuliers", "Novembre | Apprendre la guitare", "Novembre | Prendre des cours de solfege", "Novembre | Apprendre le ukulele", "Decembre | Regarder des vidéos sur ce sujet et reproduire le même mode de respiration", 
+              "Septembre | Aller dans un lieu inexplore", "Septembre | Voyager a travers le monde", "Septembre | Faire une randonnee", "Octobre | Acquerir de nouvelles connaissances", "Octobre | Formez-vous sur internet",
+              "Octobre | Prenez des cours particuliers", "Novembre | Apprendre la guitare", "Novembre | Prendre des cours de solfege", "Novembre | Apprendre le ukulele", "Decembre | Regarder des videos sur ce sujet et reproduire le même mode de respiration", 
               "Decembre | Trouver un endroit calme pour respirer", "Decembre | Prendre 5min pour souffler"], description: 'Entrer les challenge du mois que vous souahitez faire : ')
   }
   stages 
@@ -30,7 +30,7 @@ pipeline
         echo 'Building "[US] Janvier - Prendre le temps pour ecrire"...'
         sleep 1
         echo 'Build OK!'
-        echo 'Building "[US] Janvier - Mettre de l'ordre dans ses idées"...'
+        echo 'Building "[US] Janvier - Mettre de l'ordre dans ses idees"...'
         sleep 1
         echo 'Build OK!'
         echo 'Building "[US] [US] Janvier - Acheter un journal intime"...'
@@ -38,16 +38,16 @@ pipeline
         echo 'Build OK!'
 
 
-        echo 'Building "[EPIC] Février - redécorer la maison pour me sentir bien"...'
+        echo 'Building "[EPIC] Fevrier - redecorer la maison pour me sentir bien"...'
         sleep 1
         echo 'Build OK!'
-        echo 'Building "[US] Février - Repeindre les murs du salon pour une ambiance plus tamisée"...'
+        echo 'Building "[US] Fevrier - Repeindre les murs du salon pour une ambiance plus tamisee"...'
         sleep 2
         echo 'Build OK!'
-        echo 'Building "[US] Février - Revisiter l\'agencement des meubles"...'
+        echo 'Building "[US] Fevrier - Revisiter l\'agencement des meubles"...'
         sleep 1
         echo 'Build OK!'
-        echo 'Building "[US] Février - Faire un grand menage"...'
+        echo 'Building "[US] Fevrier - Faire un grand menage"...'
         sleep 1
         echo 'Build OK!'
 
@@ -55,13 +55,13 @@ pipeline
         echo 'Building "[EPIC] Mars - Prendre soin de soi"...'
         sleep 1
         echo 'Build OK!'
-        echo 'Building "[US] Mars - Prendre un temps pour méditer"...'
+        echo 'Building "[US] Mars - Prendre un temps pour mediter"...'
         sleep 2
         echo 'Build OK!'
         echo 'Building "[US] Mars - Manger plus sainement"...'
         sleep 1
         echo 'Build OK!'
-        echo 'Building "[US] Mars - Commencer à faire du sport"...'
+        echo 'Building "[US] Mars - Commencer a faire du sport"...'
         sleep 2
         echo 'Build OK!'
 
@@ -69,7 +69,7 @@ pipeline
         echo 'Building "[EPIC] Avril - Soyer gentil"...'
         sleep 2
         echo 'Build OK!'
-        echo 'Building "[US] Avril - Faire des cadeaux à ses proches"...'
+        echo 'Building "[US] Avril - Faire des cadeaux a ses proches"...'
         sleep 1
         echo 'Build OK!'
         echo 'Building "[US] Avril - Souhaiter des paroles aimables et pleines d\'espoir"...'
@@ -83,7 +83,7 @@ pipeline
         echo 'Building "[EPIC] Mai - Faites quelque chose que vous n’avez jamais fait auparavant"...'
         sleep 2
         echo 'Build OK!'
-        echo 'Building "[US] Mai - Commencez à prendre des cours d\'échecs"...'
+        echo 'Building "[US] Mai - Commencez a prendre des cours d\'echecs"...'
         sleep 1
         echo 'Build OK!'
         echo 'Building "[US] Mai - Faire un voyage avec un membre de votre famille"...'
@@ -111,10 +111,10 @@ pipeline
         echo 'Build OK!'
 
         
-        echo 'Building "[EPIC] Juillet - Aller à un concert et danser"...'
+        echo 'Building "[EPIC] Juillet - Aller a un concert et danser"...'
         sleep 2
         echo 'Build OK!'
-        echo 'Building "[US] Juillet - Aller à des festivals"...'
+        echo 'Building "[US] Juillet - Aller a des festivals"...'
         sleep 1
         echo 'Build OK!'
         echo 'Building "[US] Juillet - Apprendre a chanter"...'
@@ -132,30 +132,30 @@ pipeline
         echo 'Building "[US] Août - Admirer le lever du soleil"...'
         sleep 1
         echo 'Build OK!'
-        echo 'Building "[US] Août - Regarder les étoiles"...'
+        echo 'Building "[US] Août - Regarder les etoiles"...'
         sleep 2
         echo 'Build OK!'
         echo 'Building "[US] Août - Prenez un bain de minuit"...'
         sleep 1
         echo 'Build OK!'
     
-        echo 'Building "[EPIC] Septembre - Découvrez le monde"...'
+        echo 'Building "[EPIC] Septembre - Decouvrez le monde"...'
         sleep 2
         echo 'Build OK!'
-        echo 'Building "[US] Septembre - Aller dans un lieu inexploré"...'
+        echo 'Building "[US] Septembre - Aller dans un lieu inexplore"...'
         sleep 1
         echo 'Build OK!'
-        echo 'Building "[US] Septembre - Voyager à travers le monde"...'
+        echo 'Building "[US] Septembre - Voyager a travers le monde"...'
         sleep 2
         echo 'Build OK!'
-        echo 'Building "[US] Septembre - Faire une randonnée"...'
+        echo 'Building "[US] Septembre - Faire une randonnee"...'
         sleep 1
         echo 'Build OK!'
 
-        echo 'Building "[EPIC] Octobre - Étudiez"...'
+        echo 'Building "[EPIC] Octobre - etudiez"...'
         sleep 2
         echo 'Build OK!'
-        echo 'Building "[US] Octobre - Acquérir de nouvelles connaissances"...'
+        echo 'Building "[US] Octobre - Acquerir de nouvelles connaissances"...'
         sleep 1
         echo 'Build OK!'
         echo 'Building "[US] Octobre - Formez-vous sur internet"...'
@@ -166,30 +166,30 @@ pipeline
         echo 'Build OK!'
 
 
-        echo 'Building "[EPIC] Novembre - Apprendre à jouer d\'un instrument"...'
+        echo 'Building "[EPIC] Novembre - Apprendre a jouer d\'un instrument"...'
         sleep 2
         echo 'Build OK!'
         echo 'Building "[US] Novembre - Apprendre la guitare"...'
         sleep 1
         echo 'Build OK!'
-        echo 'Building "[US] Novembre - Prendre des cours de solfège"...'
+        echo 'Building "[US] Novembre - Prendre des cours de solfege"...'
         sleep 2
         echo 'Build OK!'
-        echo 'Building "[US] Novembre - Apprendre le ukulélé"...'
+        echo 'Building "[US] Novembre - Apprendre le ukulele"...'
         sleep 1
         echo 'Build OK!'
 
 
-        echo 'Building "[EPIC] Décembre - Respirez consciencieusement"...'
+        echo 'Building "[EPIC] Decembre - Respirez consciencieusement"...'
         sleep 2
         echo 'Build OK!'
-        echo 'Building "[US] Décembre - Regarder des vidéos sur ce sujet et reproduire le même mode de respiration"...'
+        echo 'Building "[US] Decembre - Regarder des videos sur ce sujet et reproduire le même mode de respiration"...'
         sleep 1
         echo 'Build OK!'
-        echo 'Building "[US] Décembre - Trouver un endroit calme pour respirer"...'
+        echo 'Building "[US] Decembre - Trouver un endroit calme pour respirer"...'
         sleep 2
         echo 'Build OK!'
-        echo 'Building "[US] Décembre - Prendre 5min pour souffler"...'
+        echo 'Building "[US] Decembre - Prendre 5min pour souffler"...'
         sleep 1
         echo 'Build OK!'
 
@@ -212,7 +212,7 @@ pipeline
             echo 'Testing "[EPIC] Janvier - Rediger un journal intime"...'
             sleep 2
             echo 'Test OK!'
-            echo 'Testing "[US] Janvier - Mettre de l'ordre dans ses idées"...'
+            echo 'Testing "[US] Janvier - Mettre de l'ordre dans ses idees"...'
             sleep 1
             echo 'Test OK!'
             echo 'Testing "[US] [US] Janvier - Acheter un journal intime"...'
@@ -220,13 +220,13 @@ pipeline
             echo 'Test OK!'
     
     
-            echo 'Testing "[EPIC] Février - redécorer la maison pour me sentir bien"...'
+            echo 'Testing "[EPIC] Fevrier - redecorer la maison pour me sentir bien"...'
             sleep 1
             echo 'Test OK!'
-            echo 'Testing "[US] Février - Repeindre les murs du salon pour une ambiance plus tamisée"...'
+            echo 'Testing "[US] Fevrier - Repeindre les murs du salon pour une ambiance plus tamisee"...'
             sleep 2
             echo 'Test OK!'
-            echo 'Testing "[US] Février - Revisiter l\'agencement des meubles"...'
+            echo 'Testing "[US] Fevrier - Revisiter l\'agencement des meubles"...'
             sleep 1
             echo 'Test OK!'
     
@@ -234,13 +234,13 @@ pipeline
             echo 'Testing "[EPIC] Mars - Prendre soin de soi"...'
             sleep 1
             echo 'Test OK!'
-            echo 'Testing "[US] Mars - Prendre un temps pour méditer"...'
+            echo 'Testing "[US] Mars - Prendre un temps pour mediter"...'
             sleep 2
             echo 'Test OK!'
             echo 'Testing "[US] Mars - Manger plus sainement"...'
             sleep 1
             echo 'Test OK!'
-            echo 'Testing "[US] Mars - Commencer à faire du sport"...'
+            echo 'Testing "[US] Mars - Commencer a faire du sport"...'
             sleep 2
             echo 'Test OK!'
     
@@ -248,7 +248,7 @@ pipeline
             echo 'Testing "[EPIC] Avril - Soyer gentil"...'
             sleep 2
             echo 'Test OK!'
-            echo 'Testing "[US] Avril - Faire des cadeaux à ses proches"...'
+            echo 'Testing "[US] Avril - Faire des cadeaux a ses proches"...'
             sleep 1
             echo 'Test OK!'
             echo 'Testing "[US] Avril - Souhaiter des paroles aimables et pleines d\'espoir"...'
@@ -262,7 +262,7 @@ pipeline
             echo 'Testing "[EPIC] Mai - Faites quelque chose que vous n’avez jamais fait auparavant"...'
             sleep 2
             echo 'Test OK!'
-            echo 'Testing "[US] Mai - Commencez à prendre des cours d\'échecs"...'
+            echo 'Testing "[US] Mai - Commencez a prendre des cours d\'echecs"...'
             sleep 1
             echo 'Test OK!'
             echo 'Testing "[US] Mai - Faire un voyage avec un membre de votre famille"...'
@@ -290,10 +290,10 @@ pipeline
             echo 'Test OK!'
     
             
-            echo 'Testing "[EPIC] Juillet - Aller à un concert et danser"...'
+            echo 'Testing "[EPIC] Juillet - Aller a un concert et danser"...'
             sleep 2
             echo 'Test OK!'
-            echo 'Testing "[US] Juillet - Aller à des festivals"...'
+            echo 'Testing "[US] Juillet - Aller a des festivals"...'
             sleep 1
             echo 'Test OK!'
             echo 'Testing "[US] Juillet - Apprendre a chanter"...'
@@ -311,30 +311,30 @@ pipeline
             echo 'Testing "[US] Août - Admirer le lever du soleil"...'
             sleep 1
             echo 'Test OK!'
-            echo 'Testing "[US] Août - Regarder les étoiles"...'
+            echo 'Testing "[US] Août - Regarder les etoiles"...'
             sleep 2
             echo 'Test OK!'
             echo 'Testing "[US] Août - Prenez un bain de minuit"...'
             sleep 1
             echo 'Test OK!'
         
-            echo 'Testing "[EPIC] Septembre - Découvrez le monde"...'
+            echo 'Testing "[EPIC] Septembre - Decouvrez le monde"...'
             sleep 2
             echo 'Test OK!'
-            echo 'Testing "[US] Septembre - Aller dans un lieu inexploré"...'
+            echo 'Testing "[US] Septembre - Aller dans un lieu inexplore"...'
             sleep 1
             echo 'Test OK!'
-            echo 'Testing "[US] Septembre - Voyager à travers le monde"...'
+            echo 'Testing "[US] Septembre - Voyager a travers le monde"...'
             sleep 2
             echo 'Test OK!'
-            echo 'Testing "[US] Septembre - Faire une randonnée"...'
+            echo 'Testing "[US] Septembre - Faire une randonnee"...'
             sleep 1
             echo 'Test OK!'
     
-            echo 'Testing "[EPIC] Octobre - Étudiez"...'
+            echo 'Testing "[EPIC] Octobre - etudiez"...'
             sleep 2
             echo 'Test OK!'
-            echo 'Testing "[US] Octobre - Acquérir de nouvelles connaissances"...'
+            echo 'Testing "[US] Octobre - Acquerir de nouvelles connaissances"...'
             sleep 1
             echo 'Test OK!'
             echo 'Testing "[US] Octobre - Formez-vous sur internet"...'
@@ -345,30 +345,30 @@ pipeline
             echo 'Test OK!'
     
     
-            echo 'Testing "[EPIC] Novembre - Apprendre à jouer d\'un instrument"...'
+            echo 'Testing "[EPIC] Novembre - Apprendre a jouer d\'un instrument"...'
             sleep 2
             echo 'Test OK!'
             echo 'Testing "[US] Novembre - Apprendre la guitare"...'
             sleep 1
             echo 'Test OK!'
-            echo 'Testing "[US] Novembre - Prendre des cours de solfège"...'
+            echo 'Testing "[US] Novembre - Prendre des cours de solfege"...'
             sleep 2
             echo 'Test OK!'
-            echo 'Testing "[US] Novembre - Apprendre le ukulélé"...'
+            echo 'Testing "[US] Novembre - Apprendre le ukulele"...'
             sleep 1
             echo 'Test OK!'
     
     
-            echo 'Testing "[EPIC] Décembre - Respirez consciencieusement"...'
+            echo 'Testing "[EPIC] Decembre - Respirez consciencieusement"...'
             sleep 2
             echo 'Test OK!'
-            echo 'Testing "[US] Décembre - Regarder des vidéos sur ce sujet et reproduire le même mode de respiration"...'
+            echo 'Testing "[US] Decembre - Regarder des videos sur ce sujet et reproduire le même mode de respiration"...'
             sleep 1
             echo 'Test OK!'
-            echo 'Testing "[US] Décembre - Trouver un endroit calme pour respirer"...'
+            echo 'Testing "[US] Decembre - Trouver un endroit calme pour respirer"...'
             sleep 2
             echo 'Test OK!'
-            echo 'Testing "[US] Décembre - Prendre 5min pour souffler"...'
+            echo 'Testing "[US] Decembre - Prendre 5min pour souffler"...'
             sleep 1
             echo 'Test OK!'
     
