@@ -431,10 +431,10 @@ pipeline
             if(verifChallengeMois(mois, c1)){
               nbTache = nbTache + 1
             }
-            if(verifChallengeMois(mois, c2) && c2 =! c1 && c2 =! c3){
+            if(verifChallengeMois(mois, c2) && c2 != c1 && c2 != c3){
               nbTache = nbTache + 1
             }
-            if(verifChallengeMois(mois, c3) && c3 =! c1 && c3 =! c2){
+            if(verifChallengeMois(mois, c3) && c3 != c1 && c3 != c2){
               nbTache = nbTache + 1
             }
             def stat = calculStat(nbTache)
