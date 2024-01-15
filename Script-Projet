@@ -24,6 +24,22 @@ def printTempsRestant(int today) {
     }
 }
 
+def printAvancement(String mois, String c1, String c2, String c3, int jour) {
+    def nbTaches = 0
+    if (verifChallengeMois(mois, c1)) {
+        nbTaches = nbTaches + 1
+    }
+    if (verifChallengeMois(mois, c2) && c2 != c1 && c2 != c3) {
+        nbTaches = nbTaches + 1
+    }
+    if (verifChallengeMois(mois, c3) && c3 != c1 && c3 != c2) {
+        nbTaches = nbTaches + 1
+    }
+    def stat = calculStat(nbTaches)
+    printTempsRestant(jour)
+    echo "Vous êtes à ${stat}% de vos tâches pour le mois de ${mois}"
+}
+
 pipeline 
 {
   agent any
@@ -418,21 +434,6 @@ pipeline
       steps 
       {
         script {            
-            def printAvancement(String mois, String c1, String c2, String c3, int jour) {
-                def nbTaches = 0
-                if (verifChallengeMois(mois, c1)) {
-                    nbTaches = nbTaches + 1
-                }
-                if (verifChallengeMois(mois, c2) && c2 != c1 && c2 != c3) {
-                    nbTaches = nbTaches + 1
-                }
-                if (verifChallengeMois(mois, c3) && c3 != c1 && c3 != c2) {
-                    nbTaches = nbTaches + 1
-                }
-                def stat = calculStat(nbTaches)
-                printTempsRestant(jour)
-                echo "Vous êtes à ${stat}% de vos tâches pour le mois de ${mois}"
-            }
             def today = "${params.DATE_DU_JOUR}"
             def mois = "${params.MOIS}"
             def c1 = "${params.CHALLENGES}"
