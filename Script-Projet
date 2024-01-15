@@ -55,7 +55,7 @@ pipeline
               "Septembre | Aller dans un lieu inexplore", "Septembre | Voyager a travers le monde", "Septembre | Faire une randonnee", "Octobre | Acquerir de nouvelles connaissances", "Octobre | Formez-vous sur internet",
               "Octobre | Prenez des cours particuliers", "Novembre | Apprendre la guitare", "Novembre | Prendre des cours de solfege", "Novembre | Apprendre le ukulele", "Decembre | Regarder des videos sur ce sujet et reproduire le même mode de respiration", 
               "Decembre | Trouver un endroit calme pour respirer", "Decembre | Prendre 5min pour souffler"], description: 'Entrer les challenge du mois que vous souahitez faire : ')
-        choice(name: 'CHALLENGES2', choices: ["Janvier | Mettre de l'ordre dans ses idees", "Janvier | Acheter un journal intime", "Janvier | Prendre le temps pour ecrire", "Fevrier | Repeindre les  murs", "Fevrier | Revisiter l\'agencement des meubles",
+        choice(name: 'CHALLENGES2', choices: ["Aucun", "Janvier | Mettre de l'ordre dans ses idees", "Janvier | Acheter un journal intime", "Janvier | Prendre le temps pour ecrire", "Fevrier | Repeindre les  murs", "Fevrier | Revisiter l\'agencement des meubles",
               "Fevrier | Faire un grand menage", "Mars | Prendre un temps pour mediter", "Mars | Manger plus sainement", "Mars | Commencer a faire du sport", "Avril | Faire des cadeaux a ses proches", 
               "Avril | Souhaiter des paroles aimables et pleines d\'espoir", "Avril | Souriez aux gens", "Mai | Commencez a prendre des cours d\'echecs", "Mai | Prenez des cours de salsa",
               "Mai | Terminer un marathon", "Juin | Sortir diner avec des proches", "Juin | Se reunir en famille", "Juin | Se balader avec des amis", "Juillet | Aller a des festivals", 
