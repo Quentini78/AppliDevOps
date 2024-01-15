@@ -393,49 +393,91 @@ pipeline
       {
         script 
         {
-          if(1==1){
-            echo "aller"
-          }
-          else {
           def today = "${params.DATE_DU_JOUR}"
           def mois = "${params.MOIS}"
-          def nb_challenges = 0
+          def c1 = "${params.CHALLENGES}"
+          def c2 = "${params.CHALLENGES2}"
+          def c3 = "${params.CHALLENGES3}"
+          def nbTaches = 0
+
+          def cutString(String input){
+            return input.split(" \\| ")
+          }
+
+          def verifChallengeMois{String mois, String challenge){
+            def partiesChallenge = cutString(challenge)
+            if(partiesChalleng[0] != mois || challenge == "Aucun"){
+              return false
+            }
+            return true
+          }
+
+          def calculStat(int nbTache){
+            def total = 3
+            def pourcentage = (nbTache/total)*100
+            return pourcentage
+          }
+
+          def printTempsRestant(int today){
+            if(today < 16){
+              echo "Vous etes le ${today} du mois. Vous avez le temps"
+            }
+            else {
+              echo "Vous etes le ${today} du mois. Depechez-vous"
+            }
+          }
+
+          def printAvancement(String mois, String c1, String c2, String c3, int jour){
+            if(verifChallengeMois(mois, c1) {
+              nbTache = nbTache + 1
+            }
+            if(verifChallengeMois(mois, c2) && c2 =! c1 && c2 =! c3){
+              nbTache = nbTache + 1
+            }
+            if(verifChallengeMois(mois, c3) && c3 =! c1 && c3 =! c2){
+              nbTache = nbTache + 1
+            }
+            def stat = calculStat(nbTache)
+            printTempsRestant(today)
+            echo "Vous êtes a ${stat}% de vos tache pour le mois de ${mois}"
+          }
+
           switch (mois) {
               case 'Janvier':
-                echo "Janvier"
+                printAvancement(mois, c1, c2, c3, today)
                 break
               case 'Fevrier':
-                echo "Janvier"
+                printAvancement(mois, c1, c2, c3, today)
                 break
               case 'Mars':
-                echo "Janvier"
+                printAvancement(mois, c1, c2, c3, today)
                 break
               case 'Avril':
-                echo "Janvier"
+                printAvancement(mois, c1, c2, c3, today)
                 break
               case 'Mai':
-                echo "Janvier"
+                printAvancement(mois, c1, c2, c3, today)
                 break
               case 'Juin':
-                echo "Janvier"
+                printAvancement(mois, c1, c2, c3, today)
                 break
               case 'Juillet':
-                echo "Janvier"
+                printAvancement(mois, c1, c2, c3, today)
                 break
               case 'Aout':
-                echo "Janvier"
+                printAvancement(mois, c1, c2, c3, today)
                 break
               case 'Septembre':
-                echo "Janvier"
+                printAvancement(mois, c1, c2, c3, today)
                 break
               case 'Octobre':
-                echo "Janvier"
+                printAvancement(mois, c1, c2, c3, today)
                 break
               case 'Novembre':
-                echo "Janvier"
+                printAvancement(mois, c1, c2, c3, today)
                 break
               case 'Decembre':
-                echo "Janvier"
+                printAvancement(mois, c1, c2, c3, today)
                 break
             }
           }
