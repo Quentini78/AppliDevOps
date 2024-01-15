@@ -30,7 +30,7 @@ pipeline
         echo 'Building "[US] Janvier - Prendre le temps pour ecrire"...'
         sleep 1
         echo 'Build OK!'
-        echo 'Building "[US] Janvier - Mettre de l'ordre dans ses idees"...'
+        echo 'Building "[US] Janvier - Mettre de l\'ordre dans ses idees"...'
         sleep 1
         echo 'Build OK!'
         echo 'Building "[US] [US] Janvier - Acheter un journal intime"...'
