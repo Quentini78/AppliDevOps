@@ -27,16 +27,16 @@ def printTempsRestant(int today) {
 def printAvancement(String mois, String c1, String c2, String c3, int jour) {
     def nbTaches = 0
     if (verifChallengeMois(mois, c1)) {
-        nbTache = nbTache + 1
+        nbTaches = nbTaches + 1
     }
     if (verifChallengeMois(mois, c2) && c2 != c1 && c2 != c3) {
-        nbTache = nbTache + 1
+        nbTaches = nbTaches + 1
     }
     if (verifChallengeMois(mois, c3) && c3 != c1 && c3 != c2) {
-        nbTache = nbTache + 1
+        nbTaches = nbTaches + 1
     }
-    def stat = calculStat(nbTache)
-    printTempsRestant(today)
+    def stat = calculStat(nbTaches)
+    printTempsRestant(jour)
     echo "Vous êtes à ${stat}% de vos tâches pour le mois de ${mois}"
 }
 
