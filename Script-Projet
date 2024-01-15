@@ -418,14 +418,14 @@ def verifChallengeMois(String mois, String challenge) {
 def calculStat(int nbTache) {
     def total = 3
     def pourcentage = (nbTache / total) * 100
-    return pourcentage
+    return sprintf("%.2f", pourcentage)
 }
 
 def printTempsRestant(int today) {
     if (today < 16) {
-        echo "Vous êtes le ${today} du mois. Vous avez le temps."
+        echo "Vous etes le ${today} du mois. Vous avez le temps."
     } else {
-        echo "Vous êtes le ${today} du mois. Dépêchez-vous."
+        echo "Vous etes le ${today} du mois. Depechez-vous."
     }
 }
 
@@ -442,5 +442,5 @@ def printAvancement(String mois, String c1, String c2, String c3, int jour) {
     }
     def stat = calculStat(nbTaches)
     printTempsRestant(jour)
-    echo "Vous êtes à ${stat}% de vos tâches pour le mois de ${mois}"
+    echo "Vous etes à ${stat}% de vos tâches pour le mois de ${mois}"
 }
