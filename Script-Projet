@@ -404,7 +404,7 @@ pipeline
   }
 }
 def cutString(String input) {
-    return input.split("\\|")
+    return input.split(" \\| ")
 }
 
 def verifChallengeMois(String mois, String challenge) {
