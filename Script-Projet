@@ -428,7 +428,7 @@ pipeline
           }
 
           def printAvancement(String mois, String c1, String c2, String c3, int jour){
-            if(verifChallengeMois(mois, c1) {
+            if(verifChallengeMois(mois, c1)){
               nbTache = nbTache + 1
             }
             if(verifChallengeMois(mois, c2) && c2 =! c1 && c2 =! c3){
@@ -441,46 +441,7 @@ pipeline
             printTempsRestant(today)
             echo "Vous êtes a ${stat}% de vos tache pour le mois de ${mois}"
           }
-
-          switch (mois) {
-              case 'Janvier':
-                printAvancement(mois, c1, c2, c3, today)
-                break
-              case 'Fevrier':
-                printAvancement(mois, c1, c2, c3, today)
-                break
-              case 'Mars':
-                printAvancement(mois, c1, c2, c3, today)
-                break
-              case 'Avril':
-                printAvancement(mois, c1, c2, c3, today)
-                break
-              case 'Mai':
-                printAvancement(mois, c1, c2, c3, today)
-                break
-              case 'Juin':
-                printAvancement(mois, c1, c2, c3, today)
-                break
-              case 'Juillet':
-                printAvancement(mois, c1, c2, c3, today)
-                break
-              case 'Aout':
-                printAvancement(mois, c1, c2, c3, today)
-                break
-              case 'Septembre':
-                printAvancement(mois, c1, c2, c3, today)
-                break
-              case 'Octobre':
-                printAvancement(mois, c1, c2, c3, today)
-                break
-              case 'Novembre':
-                printAvancement(mois, c1, c2, c3, today)
-                break
-              case 'Decembre':
-                printAvancement(mois, c1, c2, c3, today)
-                break
-            }
-          }
+          printAvancement(mois, c1, c2, c3, today)
         }
       }
     }
