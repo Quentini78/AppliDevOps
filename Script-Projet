@@ -1,3 +1,29 @@
+def cutString(String input) {
+    return input.split("\\|")
+}
+
+def verifChallengeMois(String mois, String challenge) {
+    def partiesChallenge = cutString(challenge)
+    if (partiesChallenge[0] != mois || challenge == "Aucun") {
+        return false
+    }
+    return true
+}
+
+def calculStat(int nbTache) {
+    def total = 3
+    def pourcentage = (nbTache / total) * 100
+    return pourcentage
+}
+
+def printTempsRestant(int today) {
+    if (today < 16) {
+        echo "Vous êtes le ${today} du mois. Vous avez le temps."
+    } else {
+        echo "Vous êtes le ${today} du mois. Dépêchez-vous."
+    }
+}
+
 pipeline 
 {
   agent any
@@ -391,33 +417,7 @@ pipeline
     {
       steps 
       {
-        script {
-            def cutString(String input) {
-                return input.split("\\|")
-            }
-            
-            def verifChallengeMois(String mois, String challenge) {
-                def partiesChallenge = cutString(challenge)
-                if (partiesChallenge[0] != mois || challenge == "Aucun") {
-                    return false
-                }
-                return true
-            }
-            
-            def calculStat(int nbTache) {
-                def total = 3
-                def pourcentage = (nbTache / total) * 100
-                return pourcentage
-            }
-            
-            def printTempsRestant(int today) {
-                if (today < 16) {
-                    echo "Vous êtes le ${today} du mois. Vous avez le temps."
-                } else {
-                    echo "Vous êtes le ${today} du mois. Dépêchez-vous."
-                }
-            }
-            
+        script {            
             def printAvancement(String mois, String c1, String c2, String c3, int jour) {
                 def nbTaches = 0
                 if (verifChallengeMois(mois, c1)) {
