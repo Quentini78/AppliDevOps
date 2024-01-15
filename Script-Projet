@@ -12,7 +12,7 @@ pipeline {
               "Septembre | Aller dans un lieu inexploré", "Septembre | Voyager à travers le monde", "Septembre | Faire une randonnée", "Octobre | Acquérir de nouvelles connaissances", "Octobre | Formez-vous sur internet",
               "Octobre | Prenez des cours particuliers", "Novembre | Apprendre la guitare", "Novembre | Prendre des cours de solfège", "Novembre | Apprendre le ukulélé", "Decembre | Regarder des vidéos sur ce sujet et reproduire le même mode de respiration", 
               "Decembre | Trouver un endroit calme pour respirer", "Decembre | Prendre 5min pour souffler"], description: 'Entrer les challenge du mois que vous souahitez faire : ')
-}
+  }
   stages {
     stage('BUILD') {
       steps {
@@ -364,8 +364,9 @@ pipeline {
             sleep 1
             echo 'Test OK!'
     
-            echo 'Test COMPLETE!'            
+            echo 'Test COMPLETE!' 
           }
+        }
       }
     }
     stage('DEPLOY') {
