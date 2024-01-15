@@ -388,7 +388,7 @@ pipeline
           }
           else {
           def today = "${params.DATE_DU_JOUR}"
-          def mois = def today = "${params.MOIS}"
+          def mois = "${params.MOIS}"
           switch (mois) {
               case 'Janvier':
                 echo "Janvier"
