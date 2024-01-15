@@ -1,6 +1,8 @@
-pipeline {
+pipeline 
+{
   agent any
-  parameters{
+  parameters
+  {
         booleanParam(name: 'SKIP_TEST', description: 'Want to skip running Test cases?')
         choice(name: 'MOIS', choices: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet','Aout', 'Septembre', 'Octobre','Novembre', 'Decembre'], description: 'Choisissez le mois')
         choice(name: 'DATE_DU_JOUR', choices: ['1', '2', '3', '4', '5', '6', '7','8', '9', '10','11', '12','13', '14', '15', '16', '17', '18', '19','20', '21', '22','23', '24','25','26','27','28','29','30','31'], description: 'Quel est la date du jour ?')
@@ -13,9 +15,12 @@ pipeline {
               "Octobre | Prenez des cours particuliers", "Novembre | Apprendre la guitare", "Novembre | Prendre des cours de solfège", "Novembre | Apprendre le ukulélé", "Decembre | Regarder des vidéos sur ce sujet et reproduire le même mode de respiration", 
               "Decembre | Trouver un endroit calme pour respirer", "Decembre | Prendre 5min pour souffler"], description: 'Entrer les challenge du mois que vous souahitez faire : ')
   }
-  stages {
-    stage('BUILD') {
-      steps {
+  stages 
+  {
+    stage('BUILD') 
+    {
+      steps 
+      {
         echo 'Building app...'
         sleep 1
         echo 'Build OK!'
@@ -191,9 +196,12 @@ pipeline {
         echo 'Build COMPLETE!'
       }
     }
-    stage('TEST') {
-      steps {
-        script {
+    stage('TEST') 
+    {
+      steps 
+      {
+        script 
+        {
           if (params.SKIP_TEST) {
             echo 'Skipping tests...'
           }
@@ -369,9 +377,12 @@ pipeline {
         }
       }
     }
-    stage('DEPLOY') {
-      steps {
-        script {
+    stage('DEPLOY') 
+    {
+      steps 
+      {
+        script 
+        {
           if(1==1){
             echo "aller"
           }
@@ -415,6 +426,7 @@ pipeline {
               case 'Decembre':
                 echo "Janvier"
                 break
+            }
           }
         }
       }
