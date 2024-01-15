@@ -392,7 +392,7 @@ pipeline
       steps 
       {
         script {            
-            def today = "${params.DATE_DU_JOUR}"
+            def today = params.DATE_DU_JOUR.toInteger()
             def mois = "${params.MOIS}"
             def c1 = "${params.CHALLENGES}"
             def c2 = "${params.CHALLENGES2}"
