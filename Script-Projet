@@ -391,8 +391,7 @@ pipeline
     {
       steps 
       {
-        script 
-        {
+        script {
             def cutString(String input) {
                 return input.split("\\|")
             }
