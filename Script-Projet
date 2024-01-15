@@ -418,8 +418,7 @@ def verifChallengeMois(String mois, String challenge) {
 def calculStat(int nbTache) {
     def total = 3
     def pourcentage = (nbTache / total) * 100
-    pourcentage = sprintf("%.2f", pourcentage)
-    return pourcentage
+    return String.format("%.2f", pourcentage)
 }
 
 def printTempsRestant(int today) {
