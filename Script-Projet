@@ -1,45 +1,3 @@
-def cutString(String input) {
-    return input.split("\\|")
-}
-
-def verifChallengeMois(String mois, String challenge) {
-    def partiesChallenge = cutString(challenge)
-    if (partiesChallenge[0] != mois || challenge == "Aucun") {
-        return false
-    }
-    return true
-}
-
-def calculStat(int nbTache) {
-    def total = 3
-    def pourcentage = (nbTache / total) * 100
-    return pourcentage
-}
-
-def printTempsRestant(int today) {
-    if (today < 16) {
-        echo "Vous êtes le ${today} du mois. Vous avez le temps."
-    } else {
-        echo "Vous êtes le ${today} du mois. Dépêchez-vous."
-    }
-}
-
-def printAvancement(String mois, String c1, String c2, String c3, int jour) {
-    def nbTaches = 0
-    if (verifChallengeMois(mois, c1)) {
-        nbTaches = nbTaches + 1
-    }
-    if (verifChallengeMois(mois, c2) && c2 != c1 && c2 != c3) {
-        nbTaches = nbTaches + 1
-    }
-    if (verifChallengeMois(mois, c3) && c3 != c1 && c3 != c2) {
-        nbTaches = nbTaches + 1
-    }
-    def stat = calculStat(nbTaches)
-    printTempsRestant(jour)
-    echo "Vous êtes à ${stat}% de vos tâches pour le mois de ${mois}"
-}
-
 pipeline 
 {
   agent any
@@ -435,12 +393,53 @@ pipeline
       {
         script 
         {
-          def today = "${params.DATE_DU_JOUR}"
-          def mois = "${params.MOIS}"
-          def c1 = "${params.CHALLENGES}"
-          def c2 = "${params.CHALLENGES2}"
-          def c3 = "${params.CHALLENGES3}"
-          printAvancement(mois, c1, c2, c3, today)
+            def cutString(String input) {
+                return input.split("\\|")
+            }
+            
+            def verifChallengeMois(String mois, String challenge) {
+                def partiesChallenge = cutString(challenge)
+                if (partiesChallenge[0] != mois || challenge == "Aucun") {
+                    return false
+                }
+                return true
+            }
+            
+            def calculStat(int nbTache) {
+                def total = 3
+                def pourcentage = (nbTache / total) * 100
+                return pourcentage
+            }
+            
+            def printTempsRestant(int today) {
+                if (today < 16) {
+                    echo "Vous êtes le ${today} du mois. Vous avez le temps."
+                } else {
+                    echo "Vous êtes le ${today} du mois. Dépêchez-vous."
+                }
+            }
+            
+            def printAvancement(String mois, String c1, String c2, String c3, int jour) {
+                def nbTaches = 0
+                if (verifChallengeMois(mois, c1)) {
+                    nbTaches = nbTaches + 1
+                }
+                if (verifChallengeMois(mois, c2) && c2 != c1 && c2 != c3) {
+                    nbTaches = nbTaches + 1
+                }
+                if (verifChallengeMois(mois, c3) && c3 != c1 && c3 != c2) {
+                    nbTaches = nbTaches + 1
+                }
+                def stat = calculStat(nbTaches)
+                printTempsRestant(jour)
+                echo "Vous êtes à ${stat}% de vos tâches pour le mois de ${mois}"
+            }
+            def today = "${params.DATE_DU_JOUR}"
+            def mois = "${params.MOIS}"
+            def c1 = "${params.CHALLENGES}"
+            def c2 = "${params.CHALLENGES2}"
+            def c3 = "${params.CHALLENGES3}"
+            printAvancement(mois, c1, c2, c3, today)
         }
       }
     }
