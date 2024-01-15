@@ -404,7 +404,7 @@ pipeline
             return input.split(" \\| ")
           }
 
-          def verifChallengeMois{String mois, String challenge){
+          def verifChallengeMois(String mois, String challenge){
             def partiesChallenge = cutString(challenge)
             if(partiesChalleng[0] != mois || challenge == "Aucun"){
               return false
