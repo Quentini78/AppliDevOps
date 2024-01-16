@@ -442,5 +442,5 @@ def printAvancement(String mois, String c1, String c2, String c3, int jour) {
     }
     def stat = calculStat(nbTaches)
     printTempsRestant(jour)
-    echo "Vous etes à ${stat}% de vos tâches pour le mois de ${mois}"
+    echo "Vous etes a ${stat}% de vos taches pour le mois de ${mois}"
 }
