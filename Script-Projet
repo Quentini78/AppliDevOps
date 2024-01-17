@@ -418,7 +418,7 @@ pipeline
 def calculIMC(int taillecm, int poids) {
     def taille = taillecm/100
     def imc = poids/(taille**2)
-    def imc_string = Formatfloat(imc)
+    def imc_string = String.format("%.2f", nombre)
     if (imc < 18.5){
         echo "Vous avez un IMC de ${imc_string}. Vous etes trop maigre"
     }
@@ -445,14 +445,10 @@ def verifChallengeMois(String mois, String challenge) {
     return true
 }
 
-def Formatfloat(double nombre){
-  return String.format("%.2f", nombre)
-}
-
 def calculStat(int nbTache) {
     def total = 3
     def pourcentage = (nbTache / total) * 100
-    return Formatfloat(pourcentage)
+    return String.format("%.2f", poucentage)
 }
 
 def printTempsRestant(int today, String mois) {
