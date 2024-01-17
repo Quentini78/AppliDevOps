@@ -6,7 +6,9 @@ pipeline
         booleanParam(name: 'SKIP_TEST', description: 'Want to skip running Test cases?')
         choice(name: 'MOIS', choices: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet','Aout', 'Septembre', 'Octobre','Novembre', 'Decembre'], description: 'Choisissez le mois')
         choice(name: 'DATE_DU_JOUR', choices: ['1', '2', '3', '4', '5', '6', '7','8', '9', '10','11', '12','13', '14', '15', '16', '17', '18', '19','20', '21', '22','23', '24','25','26','27','28','29','30','31'], description: 'Quel est la date du jour ?')
-        choice(name: 'CHALLENGES', choices: ["Janvier | Mettre de l'ordre dans ses idees", "Janvier | Acheter un journal intime", "Janvier | Prendre le temps pour ecrire", "Fevrier | Repeindre les  murs", "Fevrier | Revisiter l\'agencement des meubles",
+        integer(name: 'POIDS', description: 'Entrer votre poids en kg')
+        integer(name: 'TAILLE', description: 'Entrer votre taille en cm')
+        choice(name: 'CHALLENGES_1', choices: ["Aucun", "Janvier | Mettre de l'ordre dans ses idees", "Janvier | Acheter un journal intime", "Janvier | Prendre le temps pour ecrire", "Fevrier | Repeindre les  murs", "Fevrier | Revisiter l\'agencement des meubles",
               "Fevrier | Faire un grand menage", "Mars | Prendre un temps pour mediter", "Mars | Manger plus sainement", "Mars | Commencer a faire du sport", "Avril | Faire des cadeaux a ses proches", 
               "Avril | Souhaiter des paroles aimables et pleines d\'espoir", "Avril | Souriez aux gens", "Mai | Commencez a prendre des cours d\'echecs", "Mai | Prenez des cours de salsa",
               "Mai | Terminer un marathon", "Juin | Sortir diner avec des proches", "Juin | Se reunir en famille", "Juin | Se balader avec des amis", "Juillet | Aller a des festivals", 
@@ -14,7 +16,7 @@ pipeline
               "Septembre | Aller dans un lieu inexplore", "Septembre | Voyager a travers le monde", "Septembre | Faire une randonnee", "Octobre | Acquerir de nouvelles connaissances", "Octobre | Formez-vous sur internet",
               "Octobre | Prenez des cours particuliers", "Novembre | Apprendre la guitare", "Novembre | Prendre des cours de solfege", "Novembre | Apprendre le ukulele", "Decembre | Regarder des videos sur ce sujet et reproduire le même mode de respiration", 
               "Decembre | Trouver un endroit calme pour respirer", "Decembre | Prendre 5min pour souffler"], description: 'Entrer les challenge du mois que vous souahitez faire : ')
-        choice(name: 'CHALLENGES2', choices: ["Aucun", "Janvier | Mettre de l'ordre dans ses idees", "Janvier | Acheter un journal intime", "Janvier | Prendre le temps pour ecrire", "Fevrier | Repeindre les  murs", "Fevrier | Revisiter l\'agencement des meubles",
+        choice(name: 'CHALLENGES_2', choices: ["Aucun", "Janvier | Mettre de l'ordre dans ses idees", "Janvier | Acheter un journal intime", "Janvier | Prendre le temps pour ecrire", "Fevrier | Repeindre les  murs", "Fevrier | Revisiter l\'agencement des meubles",
               "Fevrier | Faire un grand menage", "Mars | Prendre un temps pour mediter", "Mars | Manger plus sainement", "Mars | Commencer a faire du sport", "Avril | Faire des cadeaux a ses proches", 
               "Avril | Souhaiter des paroles aimables et pleines d\'espoir", "Avril | Souriez aux gens", "Mai | Commencez a prendre des cours d\'echecs", "Mai | Prenez des cours de salsa",
               "Mai | Terminer un marathon", "Juin | Sortir diner avec des proches", "Juin | Se reunir en famille", "Juin | Se balader avec des amis", "Juillet | Aller a des festivals", 
@@ -22,7 +24,7 @@ pipeline
               "Septembre | Aller dans un lieu inexplore", "Septembre | Voyager a travers le monde", "Septembre | Faire une randonnee", "Octobre | Acquerir de nouvelles connaissances", "Octobre | Formez-vous sur internet",
               "Octobre | Prenez des cours particuliers", "Novembre | Apprendre la guitare", "Novembre | Prendre des cours de solfege", "Novembre | Apprendre le ukulele", "Decembre | Regarder des videos sur ce sujet et reproduire le même mode de respiration", 
               "Decembre | Trouver un endroit calme pour respirer", "Decembre | Prendre 5min pour souffler"], description: 'Entrer les challenge du mois que vous souahitez faire : ')
-        choice(name: 'CHALLENGES3', choices: ["Aucun", "Janvier | Mettre de l'ordre dans ses idees", "Janvier | Acheter un journal intime", "Janvier | Prendre le temps pour ecrire", "Fevrier | Repeindre les  murs", "Fevrier | Revisiter l\'agencement des meubles",
+        choice(name: 'CHALLENGES_3', choices: ["Aucun", "Janvier | Mettre de l'ordre dans ses idees", "Janvier | Acheter un journal intime", "Janvier | Prendre le temps pour ecrire", "Fevrier | Repeindre les  murs", "Fevrier | Revisiter l\'agencement des meubles",
               "Fevrier | Faire un grand menage", "Mars | Prendre un temps pour mediter", "Mars | Manger plus sainement", "Mars | Commencer a faire du sport", "Avril | Faire des cadeaux a ses proches", 
               "Avril | Souhaiter des paroles aimables et pleines d\'espoir", "Avril | Souriez aux gens", "Mai | Commencez a prendre des cours d\'echecs", "Mai | Prenez des cours de salsa",
               "Mai | Terminer un marathon", "Juin | Sortir diner avec des proches", "Juin | Se reunir en famille", "Juin | Se balader avec des amis", "Juillet | Aller a des festivals", 
@@ -37,176 +39,181 @@ pipeline
     {
       steps 
       {
-        echo 'Building app...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[EPIC] Janvier - Rediger un journal intime"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Janvier - Prendre le temps pour ecrire"...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[US] Janvier - Mettre de l\'ordre dans ses idees"...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[US] [US] Janvier - Acheter un journal intime"...'
-        sleep 2
-        echo 'Build OK!'
-
-
-        echo 'Building "[EPIC] Fevrier - redecorer la maison pour me sentir bien"...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[US] Fevrier - Repeindre les murs du salon pour une ambiance plus tamisee"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Fevrier - Revisiter l\'agencement des meubles"...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[US] Fevrier - Faire un grand menage"...'
-        sleep 1
-        echo 'Build OK!'
-
-
-        echo 'Building "[EPIC] Mars - Prendre soin de soi"...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[US] Mars - Prendre un temps pour mediter"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Mars - Manger plus sainement"...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[US] Mars - Commencer a faire du sport"...'
-        sleep 2
-        echo 'Build OK!'
-
-
-        echo 'Building "[EPIC] Avril - Soyer gentil"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Avril - Faire des cadeaux a ses proches"...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[US] Avril - Souhaiter des paroles aimables et pleines d\'espoir"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Avril - Souriez aux gens"...'
-        sleep 1
-        echo 'Build OK!'
-
-
-        echo 'Building "[EPIC] Mai - Faites quelque chose que vous n’avez jamais fait auparavant"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Mai - Commencez a prendre des cours d\'echecs"...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[US] Mai - Prenez des cours de salsa"...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[US] Mai - Terminer un marathon"...'
-        sleep 2
-        echo 'Build OK!'
-
-    
-        echo 'Building "[EPIC] Juin - Passez du temps avec le votre"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Juin - Sortir diner avec des proches"...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[US] Juin - Se reunir en famille"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Juin - Se balader avec des amis"...'
-        sleep 1
-        echo 'Build OK!'
-
-        
-        echo 'Building "[EPIC] Juillet - Aller a un concert et danser"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Juillet - Aller a des festivals"...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[US] Juillet - Apprendre a chanter"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Juillet - Apprendre une danse"...'
-        sleep 1
-        echo 'Build OK!'
-    
-
-
-        echo 'Building "[EPIC] Août - Dormir une nuit sur la plage"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Août - Admirer le lever du soleil"...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[US] Août - Regarder les etoiles"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Août - Prenez un bain de minuit"...'
-        sleep 1
-        echo 'Build OK!'
-    
-        echo 'Building "[EPIC] Septembre - Decouvrez le monde"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Septembre - Aller dans un lieu inexplore"...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[US] Septembre - Voyager a travers le monde"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Septembre - Faire une randonnee"...'
-        sleep 1
-        echo 'Build OK!'
-
-        echo 'Building "[EPIC] Octobre - etudiez"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Octobre - Acquerir de nouvelles connaissances"...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[US] Octobre - Formez-vous sur internet"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Octobre - Prenez des cours particuliers"...'
-        sleep 1
-        echo 'Build OK!'
-
-
-        echo 'Building "[EPIC] Novembre - Apprendre a jouer d\'un instrument"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Novembre - Apprendre la guitare"...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[US] Novembre - Prendre des cours de solfege"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Novembre - Apprendre le ukulele"...'
-        sleep 1
-        echo 'Build OK!'
-
-
-        echo 'Building "[EPIC] Decembre - Respirez consciencieusement"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Decembre - Regarder des videos sur ce sujet et reproduire le même mode de respiration"...'
-        sleep 1
-        echo 'Build OK!'
-        echo 'Building "[US] Decembre - Trouver un endroit calme pour respirer"...'
-        sleep 2
-        echo 'Build OK!'
-        echo 'Building "[US] Decembre - Prendre 5min pour souffler"...'
-        sleep 1
-        echo 'Build OK!'
-
-        echo 'Build COMPLETE!'
+        {
+        if (params.SKIP_BUILD) {
+          echo 'Skipping builds...'
+        }else{
+          echo 'Building app...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[EPIC] Janvier - Rediger un journal intime"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Janvier - Prendre le temps pour ecrire"...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[US] Janvier - Mettre de l\'ordre dans ses idees"...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[US] [US] Janvier - Acheter un journal intime"...'
+          sleep 2
+          echo 'Build OK!'
+  
+  
+          echo 'Building "[EPIC] Fevrier - redecorer la maison pour me sentir bien"...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[US] Fevrier - Repeindre les murs du salon pour une ambiance plus tamisee"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Fevrier - Revisiter l\'agencement des meubles"...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[US] Fevrier - Faire un grand menage"...'
+          sleep 1
+          echo 'Build OK!'
+  
+  
+          echo 'Building "[EPIC] Mars - Prendre soin de soi"...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[US] Mars - Prendre un temps pour mediter"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Mars - Manger plus sainement"...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[US] Mars - Commencer a faire du sport"...'
+          sleep 2
+          echo 'Build OK!'
+  
+  
+          echo 'Building "[EPIC] Avril - Soyer gentil"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Avril - Faire des cadeaux a ses proches"...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[US] Avril - Souhaiter des paroles aimables et pleines d\'espoir"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Avril - Souriez aux gens"...'
+          sleep 1
+          echo 'Build OK!'
+  
+  
+          echo 'Building "[EPIC] Mai - Faites quelque chose que vous n’avez jamais fait auparavant"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Mai - Commencez a prendre des cours d\'echecs"...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[US] Mai - Prenez des cours de salsa"...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[US] Mai - Terminer un marathon"...'
+          sleep 2
+          echo 'Build OK!'
+  
+      
+          echo 'Building "[EPIC] Juin - Passez du temps avec le votre"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Juin - Sortir diner avec des proches"...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[US] Juin - Se reunir en famille"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Juin - Se balader avec des amis"...'
+          sleep 1
+          echo 'Build OK!'
+  
+          
+          echo 'Building "[EPIC] Juillet - Aller a un concert et danser"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Juillet - Aller a des festivals"...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[US] Juillet - Apprendre a chanter"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Juillet - Apprendre une danse"...'
+          sleep 1
+          echo 'Build OK!'
+      
+  
+  
+          echo 'Building "[EPIC] Août - Dormir une nuit sur la plage"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Août - Admirer le lever du soleil"...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[US] Août - Regarder les etoiles"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Août - Prenez un bain de minuit"...'
+          sleep 1
+          echo 'Build OK!'
+      
+          echo 'Building "[EPIC] Septembre - Decouvrez le monde"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Septembre - Aller dans un lieu inexplore"...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[US] Septembre - Voyager a travers le monde"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Septembre - Faire une randonnee"...'
+          sleep 1
+          echo 'Build OK!'
+  
+          echo 'Building "[EPIC] Octobre - etudiez"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Octobre - Acquerir de nouvelles connaissances"...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[US] Octobre - Formez-vous sur internet"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Octobre - Prenez des cours particuliers"...'
+          sleep 1
+          echo 'Build OK!'
+  
+  
+          echo 'Building "[EPIC] Novembre - Apprendre a jouer d\'un instrument"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Novembre - Apprendre la guitare"...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[US] Novembre - Prendre des cours de solfege"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Novembre - Apprendre le ukulele"...'
+          sleep 1
+          echo 'Build OK!'
+  
+  
+          echo 'Building "[EPIC] Decembre - Respirez consciencieusement"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Decembre - Regarder des videos sur ce sujet et reproduire le même mode de respiration"...'
+          sleep 1
+          echo 'Build OK!'
+          echo 'Building "[US] Decembre - Trouver un endroit calme pour respirer"...'
+          sleep 2
+          echo 'Build OK!'
+          echo 'Building "[US] Decembre - Prendre 5min pour souffler"...'
+          sleep 1
+          echo 'Build OK!'
+  
+          echo 'Build COMPLETE!'
+        }
       }
     }
     stage('TEST') 
@@ -397,6 +404,10 @@ pipeline
             def c1 = "${params.CHALLENGES}"
             def c2 = "${params.CHALLENGES2}"
             def c3 = "${params.CHALLENGES3}"
+            if(mois == "Mars"){
+              def taille = "${params.TAILLE}"
+              def poids = "${params.POIDS}"
+              calculIMC(
             printAvancement(mois, c1, c2, c3, today)
         }
       }
@@ -421,11 +432,11 @@ def calculStat(int nbTache) {
     return String.format("%.2f", pourcentage)
 }
 
-def printTempsRestant(int today) {
+def printTempsRestant(int today, String mois) {
     if (today < 16) {
-        echo "Vous etes le ${today} du mois. Vous avez le temps."
+        echo "Vous etes le ${today} du mois de ${mois}. Vous avez le temps."
     } else {
-        echo "Vous etes le ${today} du mois. Depechez-vous."
+        echo "Vous etes le ${today} du mois ${mois}. Depechez-vous."
     }
 }
 
@@ -441,6 +452,19 @@ def printAvancement(String mois, String c1, String c2, String c3, int jour) {
         nbTaches = nbTaches + 1
     }
     def stat = calculStat(nbTaches)
-    printTempsRestant(jour)
+    printTempsRestant(jour , mois)
     echo "Vous etes a ${stat}% de vos taches pour le mois de ${mois}"
+}
+
+def calculIMC(int taillecm, int poids){
+  def taille = taillecm/100
+  imc = poids/(taille**2)
+  if imc < 18.5:
+      echo "Vous avez un IMC de ${imc}%. Vous etes trop maigre"
+  elif 18.5 <= imc < 25:
+      echo "Vous avez un IMC de ${imc}%. Vous etes normal"
+  elif 25 <= imc < 30:
+      echo "Vous avez un IMC de ${imc}%. Vous etes en surpoids"
+  else:
+      echo "Vous avez un IMC de ${imc}%. Vous etes obese"
 }
