@@ -39,180 +39,176 @@ pipeline
     {
       steps 
       {
-        if (params.SKIP_BUILD) {
-          echo 'Skipping builds...'
-        }else{
-          echo 'Building app...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[EPIC] Janvier - Rediger un journal intime"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Janvier - Prendre le temps pour ecrire"...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[US] Janvier - Mettre de l\'ordre dans ses idees"...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[US] [US] Janvier - Acheter un journal intime"...'
-          sleep 2
-          echo 'Build OK!'
-  
-  
-          echo 'Building "[EPIC] Fevrier - redecorer la maison pour me sentir bien"...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[US] Fevrier - Repeindre les murs du salon pour une ambiance plus tamisee"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Fevrier - Revisiter l\'agencement des meubles"...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[US] Fevrier - Faire un grand menage"...'
-          sleep 1
-          echo 'Build OK!'
-  
-  
-          echo 'Building "[EPIC] Mars - Prendre soin de soi"...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[US] Mars - Prendre un temps pour mediter"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Mars - Manger plus sainement"...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[US] Mars - Commencer a faire du sport"...'
-          sleep 2
-          echo 'Build OK!'
-  
-  
-          echo 'Building "[EPIC] Avril - Soyer gentil"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Avril - Faire des cadeaux a ses proches"...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[US] Avril - Souhaiter des paroles aimables et pleines d\'espoir"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Avril - Souriez aux gens"...'
-          sleep 1
-          echo 'Build OK!'
-  
-  
-          echo 'Building "[EPIC] Mai - Faites quelque chose que vous n’avez jamais fait auparavant"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Mai - Commencez a prendre des cours d\'echecs"...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[US] Mai - Prenez des cours de salsa"...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[US] Mai - Terminer un marathon"...'
-          sleep 2
-          echo 'Build OK!'
-  
-      
-          echo 'Building "[EPIC] Juin - Passez du temps avec le votre"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Juin - Sortir diner avec des proches"...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[US] Juin - Se reunir en famille"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Juin - Se balader avec des amis"...'
-          sleep 1
-          echo 'Build OK!'
-  
-          
-          echo 'Building "[EPIC] Juillet - Aller a un concert et danser"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Juillet - Aller a des festivals"...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[US] Juillet - Apprendre a chanter"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Juillet - Apprendre une danse"...'
-          sleep 1
-          echo 'Build OK!'
-      
-  
-  
-          echo 'Building "[EPIC] Août - Dormir une nuit sur la plage"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Août - Admirer le lever du soleil"...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[US] Août - Regarder les etoiles"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Août - Prenez un bain de minuit"...'
-          sleep 1
-          echo 'Build OK!'
-      
-          echo 'Building "[EPIC] Septembre - Decouvrez le monde"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Septembre - Aller dans un lieu inexplore"...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[US] Septembre - Voyager a travers le monde"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Septembre - Faire une randonnee"...'
-          sleep 1
-          echo 'Build OK!'
-  
-          echo 'Building "[EPIC] Octobre - etudiez"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Octobre - Acquerir de nouvelles connaissances"...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[US] Octobre - Formez-vous sur internet"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Octobre - Prenez des cours particuliers"...'
-          sleep 1
-          echo 'Build OK!'
-  
-  
-          echo 'Building "[EPIC] Novembre - Apprendre a jouer d\'un instrument"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Novembre - Apprendre la guitare"...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[US] Novembre - Prendre des cours de solfege"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Novembre - Apprendre le ukulele"...'
-          sleep 1
-          echo 'Build OK!'
-  
-  
-          echo 'Building "[EPIC] Decembre - Respirez consciencieusement"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Decembre - Regarder des videos sur ce sujet et reproduire le même mode de respiration"...'
-          sleep 1
-          echo 'Build OK!'
-          echo 'Building "[US] Decembre - Trouver un endroit calme pour respirer"...'
-          sleep 2
-          echo 'Build OK!'
-          echo 'Building "[US] Decembre - Prendre 5min pour souffler"...'
-          sleep 1
-          echo 'Build OK!'
-  
-          echo 'Build COMPLETE!'
-        }
+        echo 'Building app...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[EPIC] Janvier - Rediger un journal intime"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Janvier - Prendre le temps pour ecrire"...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[US] Janvier - Mettre de l\'ordre dans ses idees"...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[US] [US] Janvier - Acheter un journal intime"...'
+        sleep 2
+        echo 'Build OK!'
+
+
+        echo 'Building "[EPIC] Fevrier - redecorer la maison pour me sentir bien"...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[US] Fevrier - Repeindre les murs du salon pour une ambiance plus tamisee"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Fevrier - Revisiter l\'agencement des meubles"...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[US] Fevrier - Faire un grand menage"...'
+        sleep 1
+        echo 'Build OK!'
+
+
+        echo 'Building "[EPIC] Mars - Prendre soin de soi"...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[US] Mars - Prendre un temps pour mediter"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Mars - Manger plus sainement"...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[US] Mars - Commencer a faire du sport"...'
+        sleep 2
+        echo 'Build OK!'
+
+
+        echo 'Building "[EPIC] Avril - Soyer gentil"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Avril - Faire des cadeaux a ses proches"...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[US] Avril - Souhaiter des paroles aimables et pleines d\'espoir"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Avril - Souriez aux gens"...'
+        sleep 1
+        echo 'Build OK!'
+
+
+        echo 'Building "[EPIC] Mai - Faites quelque chose que vous n’avez jamais fait auparavant"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Mai - Commencez a prendre des cours d\'echecs"...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[US] Mai - Prenez des cours de salsa"...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[US] Mai - Terminer un marathon"...'
+        sleep 2
+        echo 'Build OK!'
+
+    
+        echo 'Building "[EPIC] Juin - Passez du temps avec le votre"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Juin - Sortir diner avec des proches"...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[US] Juin - Se reunir en famille"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Juin - Se balader avec des amis"...'
+        sleep 1
+        echo 'Build OK!'
+
+        
+        echo 'Building "[EPIC] Juillet - Aller a un concert et danser"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Juillet - Aller a des festivals"...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[US] Juillet - Apprendre a chanter"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Juillet - Apprendre une danse"...'
+        sleep 1
+        echo 'Build OK!'
+    
+
+
+        echo 'Building "[EPIC] Août - Dormir une nuit sur la plage"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Août - Admirer le lever du soleil"...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[US] Août - Regarder les etoiles"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Août - Prenez un bain de minuit"...'
+        sleep 1
+        echo 'Build OK!'
+    
+        echo 'Building "[EPIC] Septembre - Decouvrez le monde"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Septembre - Aller dans un lieu inexplore"...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[US] Septembre - Voyager a travers le monde"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Septembre - Faire une randonnee"...'
+        sleep 1
+        echo 'Build OK!'
+
+        echo 'Building "[EPIC] Octobre - etudiez"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Octobre - Acquerir de nouvelles connaissances"...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[US] Octobre - Formez-vous sur internet"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Octobre - Prenez des cours particuliers"...'
+        sleep 1
+        echo 'Build OK!'
+
+
+        echo 'Building "[EPIC] Novembre - Apprendre a jouer d\'un instrument"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Novembre - Apprendre la guitare"...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[US] Novembre - Prendre des cours de solfege"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Novembre - Apprendre le ukulele"...'
+        sleep 1
+        echo 'Build OK!'
+
+
+        echo 'Building "[EPIC] Decembre - Respirez consciencieusement"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Decembre - Regarder des videos sur ce sujet et reproduire le même mode de respiration"...'
+        sleep 1
+        echo 'Build OK!'
+        echo 'Building "[US] Decembre - Trouver un endroit calme pour respirer"...'
+        sleep 2
+        echo 'Build OK!'
+        echo 'Building "[US] Decembre - Prendre 5min pour souffler"...'
+        sleep 1
+        echo 'Build OK!'
+
+        echo 'Build COMPLETE!'
       }
     }
     stage('TEST') 
