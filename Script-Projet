@@ -6,6 +6,8 @@ pipeline
         booleanParam(name: 'SKIP_TEST', description: 'Want to skip running Test cases?')
         choice(name: 'MOIS', choices: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet','Aout', 'Septembre', 'Octobre','Novembre', 'Decembre'], description: 'Choisissez le mois')
         choice(name: 'DATE_DU_JOUR', choices: ['1', '2', '3', '4', '5', '6', '7','8', '9', '10','11', '12','13', '14', '15', '16', '17', '18', '19','20', '21', '22','23', '24','25','26','27','28','29','30','31'], description: 'Quel est la date du jour ?')
+        string(name: 'POIDS', description: 'Entrer votre poids en kg')
+        string(name: 'TAILLE', description: 'Entrer votre taille en cm')
         choice(name: 'CHALLENGES', choices: ["Janvier | Mettre de l'ordre dans ses idees", "Janvier | Acheter un journal intime", "Janvier | Prendre le temps pour ecrire", "Fevrier | Repeindre les  murs", "Fevrier | Revisiter l\'agencement des meubles",
               "Fevrier | Faire un grand menage", "Mars | Prendre un temps pour mediter", "Mars | Manger plus sainement", "Mars | Commencer a faire du sport", "Avril | Faire des cadeaux a ses proches", 
               "Avril | Souhaiter des paroles aimables et pleines d\'espoir", "Avril | Souriez aux gens", "Mai | Commencez a prendre des cours d\'echecs", "Mai | Prenez des cours de salsa",
@@ -398,11 +400,39 @@ pipeline
             def c2 = "${params.CHALLENGES2}"
             def c3 = "${params.CHALLENGES3}"
             printAvancement(mois, c1, c2, c3, today)
+            if(mois == "Mars"){
+              try {
+                  def taille = params.TAILLE.toInteger()
+                  def poids = params.POIDS.toInteger()
+                  calculIMC(taille, poids)
+              } catch (NumberFormatException e) {
+                  echo "Erreur de conversion en entier pour la taille ou le poids. Assurez-vous que les valeurs sont des entiers valides."
+              }
+            }
         }
       }
     }
   }
 }
+
+def calculIMC(int taillecm, int poids) {
+    def taille = taillecm/100
+    def imc = poids/(taille**2)
+    def imc_string = String.format("%.2f", imc)
+    if (imc < 18.5){
+        echo "Vous avez un IMC de ${imc_string}. Vous etes trop maigre"
+    }
+    else if (18.5 <= imc && imc < 25){
+        echo "Vous avez un IMC de ${imc_string}. Vous etes normal"
+    }
+    else if (25 <= imc && imc < 30){
+        echo "Vous avez un IMC de ${imc_string}. Vous etes en surpoids"
+    }
+    else {
+        echo "Vous avez un IMC de ${imc_string}. Vous etes obese"
+    }
+}
+
 def cutString(String input) {
     return input.split(" \\| ")
 }
