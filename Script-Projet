@@ -403,10 +403,7 @@ pipeline
               try {
                   def taille = tailleParam.toInteger()
                   def poids = poidsParam.toInteger()
-              
-                  if (mois == "Mars") {
-                      calculIMC(taille, poids)
-                  }
+                  calculIMC(taille, mois)
               } catch (NumberFormatException e) {
                   echo "Erreur de conversion en entier pour la taille ou le poids. Assurez-vous que les valeurs sont des entiers valides."
               }
