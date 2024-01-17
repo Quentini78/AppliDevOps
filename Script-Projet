@@ -6,9 +6,7 @@ pipeline
         booleanParam(name: 'SKIP_TEST', description: 'Want to skip running Test cases?')
         choice(name: 'MOIS', choices: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet','Aout', 'Septembre', 'Octobre','Novembre', 'Decembre'], description: 'Choisissez le mois')
         choice(name: 'DATE_DU_JOUR', choices: ['1', '2', '3', '4', '5', '6', '7','8', '9', '10','11', '12','13', '14', '15', '16', '17', '18', '19','20', '21', '22','23', '24','25','26','27','28','29','30','31'], description: 'Quel est la date du jour ?')
-        string(name: 'POIDS', description: 'Entrer votre poids en kg')
-        string(name: 'TAILLE', description: 'Entrer votre taille en cm')
-        choice(name: 'CHALLENGES_1', choices: ["Aucun", "Janvier | Mettre de l'ordre dans ses idees", "Janvier | Acheter un journal intime", "Janvier | Prendre le temps pour ecrire", "Fevrier | Repeindre les  murs", "Fevrier | Revisiter l\'agencement des meubles",
+        choice(name: 'CHALLENGES', choices: ["Janvier | Mettre de l'ordre dans ses idees", "Janvier | Acheter un journal intime", "Janvier | Prendre le temps pour ecrire", "Fevrier | Repeindre les  murs", "Fevrier | Revisiter l\'agencement des meubles",
               "Fevrier | Faire un grand menage", "Mars | Prendre un temps pour mediter", "Mars | Manger plus sainement", "Mars | Commencer a faire du sport", "Avril | Faire des cadeaux a ses proches", 
               "Avril | Souhaiter des paroles aimables et pleines d\'espoir", "Avril | Souriez aux gens", "Mai | Commencez a prendre des cours d\'echecs", "Mai | Prenez des cours de salsa",
               "Mai | Terminer un marathon", "Juin | Sortir diner avec des proches", "Juin | Se reunir en famille", "Juin | Se balader avec des amis", "Juillet | Aller a des festivals", 
@@ -16,7 +14,7 @@ pipeline
               "Septembre | Aller dans un lieu inexplore", "Septembre | Voyager a travers le monde", "Septembre | Faire une randonnee", "Octobre | Acquerir de nouvelles connaissances", "Octobre | Formez-vous sur internet",
               "Octobre | Prenez des cours particuliers", "Novembre | Apprendre la guitare", "Novembre | Prendre des cours de solfege", "Novembre | Apprendre le ukulele", "Decembre | Regarder des videos sur ce sujet et reproduire le même mode de respiration", 
               "Decembre | Trouver un endroit calme pour respirer", "Decembre | Prendre 5min pour souffler"], description: 'Entrer les challenge du mois que vous souahitez faire : ')
-        choice(name: 'CHALLENGES_2', choices: ["Aucun", "Janvier | Mettre de l'ordre dans ses idees", "Janvier | Acheter un journal intime", "Janvier | Prendre le temps pour ecrire", "Fevrier | Repeindre les  murs", "Fevrier | Revisiter l\'agencement des meubles",
+        choice(name: 'CHALLENGES2', choices: ["Aucun", "Janvier | Mettre de l'ordre dans ses idees", "Janvier | Acheter un journal intime", "Janvier | Prendre le temps pour ecrire", "Fevrier | Repeindre les  murs", "Fevrier | Revisiter l\'agencement des meubles",
               "Fevrier | Faire un grand menage", "Mars | Prendre un temps pour mediter", "Mars | Manger plus sainement", "Mars | Commencer a faire du sport", "Avril | Faire des cadeaux a ses proches", 
               "Avril | Souhaiter des paroles aimables et pleines d\'espoir", "Avril | Souriez aux gens", "Mai | Commencez a prendre des cours d\'echecs", "Mai | Prenez des cours de salsa",
               "Mai | Terminer un marathon", "Juin | Sortir diner avec des proches", "Juin | Se reunir en famille", "Juin | Se balader avec des amis", "Juillet | Aller a des festivals", 
@@ -24,7 +22,7 @@ pipeline
               "Septembre | Aller dans un lieu inexplore", "Septembre | Voyager a travers le monde", "Septembre | Faire une randonnee", "Octobre | Acquerir de nouvelles connaissances", "Octobre | Formez-vous sur internet",
               "Octobre | Prenez des cours particuliers", "Novembre | Apprendre la guitare", "Novembre | Prendre des cours de solfege", "Novembre | Apprendre le ukulele", "Decembre | Regarder des videos sur ce sujet et reproduire le même mode de respiration", 
               "Decembre | Trouver un endroit calme pour respirer", "Decembre | Prendre 5min pour souffler"], description: 'Entrer les challenge du mois que vous souahitez faire : ')
-        choice(name: 'CHALLENGES_3', choices: ["Aucun", "Janvier | Mettre de l'ordre dans ses idees", "Janvier | Acheter un journal intime", "Janvier | Prendre le temps pour ecrire", "Fevrier | Repeindre les  murs", "Fevrier | Revisiter l\'agencement des meubles",
+        choice(name: 'CHALLENGES3', choices: ["Aucun", "Janvier | Mettre de l'ordre dans ses idees", "Janvier | Acheter un journal intime", "Janvier | Prendre le temps pour ecrire", "Fevrier | Repeindre les  murs", "Fevrier | Revisiter l\'agencement des meubles",
               "Fevrier | Faire un grand menage", "Mars | Prendre un temps pour mediter", "Mars | Manger plus sainement", "Mars | Commencer a faire du sport", "Avril | Faire des cadeaux a ses proches", 
               "Avril | Souhaiter des paroles aimables et pleines d\'espoir", "Avril | Souriez aux gens", "Mai | Commencez a prendre des cours d\'echecs", "Mai | Prenez des cours de salsa",
               "Mai | Terminer un marathon", "Juin | Sortir diner avec des proches", "Juin | Se reunir en famille", "Juin | Se balader avec des amis", "Juillet | Aller a des festivals", 
@@ -400,49 +398,18 @@ pipeline
             def c2 = "${params.CHALLENGES2}"
             def c3 = "${params.CHALLENGES3}"
             printAvancement(mois, c1, c2, c3, today)
-            if(mois == "Mars"){
-              try {
-                  def taille = params.TAILLE.toInteger()
-                  def poids = params.POIDS.toInteger()
-                  calculIMC(taille, poids)
-              } catch (NumberFormatException e) {
-                  echo "Erreur de conversion en entier pour la taille ou le poids. Assurez-vous que les valeurs sont des entiers valides."
-              }
-            }
         }
       }
     }
   }
 }
-
-def calculIMC(int taillecm, int poids) {
-    def taille = taillecm/100
-    def imc = poids/(taille**2)
-    def imc_string = String.format("%.2f", imc)
-    if (imc < 18.5){
-        echo "Vous avez un IMC de ${imc_string}. Vous etes trop maigre"
-    }
-    else if (18.5 <= imc && imc < 25){
-        echo "Vous avez un IMC de ${imc_string}. Vous etes normal"
-    }
-    else if (25 <= imc && imc < 30){
-        echo "Vous avez un IMC de ${imc_string}. Vous etes en surpoids"
-    }
-    else {
-        echo "Vous avez un IMC de ${imc_string}. Vous etes obese"
-    }
-}
-
 def cutString(String input) {
     return input.split(" \\| ")
 }
 
 def verifChallengeMois(String mois, String challenge) {
     def partiesChallenge = cutString(challenge)
-    if (challenge == "Aucun"){
-      return false
-    }
-    if (partiesChallenge[0] != mois) {
+    if (partiesChallenge[0] != mois || challenge == "Aucun") {
         return false
     }
     return true
@@ -451,14 +418,14 @@ def verifChallengeMois(String mois, String challenge) {
 def calculStat(int nbTache) {
     def total = 3
     def pourcentage = (nbTache / total) * 100
-    return pourcentage
+    return String.format("%.2f", pourcentage)
 }
 
-def printTempsRestant(int today, String mois) {
+def printTempsRestant(int today) {
     if (today < 16) {
-        echo "Vous etes le ${today} du mois de ${mois}. Vous avez le temps."
+        echo "Vous etes le ${today} du mois. Vous avez le temps."
     } else {
-        echo "Vous etes le ${today} du mois ${mois}. Depechez-vous."
+        echo "Vous etes le ${today} du mois. Depechez-vous."
     }
 }
 
@@ -466,17 +433,14 @@ def printAvancement(String mois, String c1, String c2, String c3, int jour) {
     def nbTaches = 0
     if (verifChallengeMois(mois, c1)) {
         nbTaches = nbTaches + 1
-        echo "${c1} une tache en plus"
     }
     if (verifChallengeMois(mois, c2) && c2 != c1 && c2 != c3) {
         nbTaches = nbTaches + 1
-        echo "${c2} une tache en plus"
     }
     if (verifChallengeMois(mois, c3) && c3 != c1 && c3 != c2) {
         nbTaches = nbTaches + 1
-        echo "${c3} une tache en plus"
     }
     def stat = calculStat(nbTaches)
-    printTempsRestant(jour , mois)
+    printTempsRestant(jour)
     echo "Vous etes a ${stat}% de vos taches pour le mois de ${mois}"
 }
