@@ -399,6 +399,7 @@ pipeline
             def c1 = "${params.CHALLENGES}"
             def c2 = "${params.CHALLENGES2}"
             def c3 = "${params.CHALLENGES3}"
+            printAvancement(mois, c1, c2, c3, today)
             if(mois == "Mars"){
               try {
                   def taille = params.TAILLE.toInteger()
@@ -408,7 +409,6 @@ pipeline
                   echo "Erreur de conversion en entier pour la taille ou le poids. Assurez-vous que les valeurs sont des entiers valides."
               }
             }
-            printAvancement(mois, c1, c2, c3, today)
         }
       }
     }
@@ -439,7 +439,7 @@ def cutString(String input) {
 
 def verifChallengeMois(String mois, String challenge) {
     def partiesChallenge = cutString(challenge)
-    if (partiesChallenge[0] != mois || challenge == "Aucun") {
+    if (challenge == "Aucun" || partiesChallenge[0] != mois) {
         return false
     }
     return true
