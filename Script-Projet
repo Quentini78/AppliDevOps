@@ -460,12 +460,16 @@ def printAvancement(String mois, String c1, String c2, String c3, int jour) {
 def calculIMC(int taillecm, int poids){
   def taille = taillecm/100
   imc = poids/(taille**2)
-  if imc < 18.5:
+  if (imc < 18.5){
       echo "Vous avez un IMC de ${imc}%. Vous etes trop maigre"
-  elif 18.5 <= imc < 25:
+  }
+  elif (18.5 <= imc < 25){
       echo "Vous avez un IMC de ${imc}%. Vous etes normal"
-  elif 25 <= imc < 30:
+  }
+  elif (25 <= imc < 30){
       echo "Vous avez un IMC de ${imc}%. Vous etes en surpoids"
-  else:
+  {
+  else{
       echo "Vous avez un IMC de ${imc}%. Vous etes obese"
+  }
 }
