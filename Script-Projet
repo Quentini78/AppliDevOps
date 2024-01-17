@@ -439,7 +439,10 @@ def cutString(String input) {
 
 def verifChallengeMois(String mois, String challenge) {
     def partiesChallenge = cutString(challenge)
-    if (challenge == "Aucun" || partiesChallenge[0] != mois) {
+    if (challenge == "Aucun"){
+      return false
+    }
+    if (partiesChallenge[0] != mois) {
         return false
     }
     return true
