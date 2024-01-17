@@ -418,18 +418,17 @@ pipeline
 def calculIMC(int taillecm, int poids) {
     def taille = taillecm/100
     def imc = poids/(taille**2)
-    def imc_string = String.format("%.2f", nombre)
     if (imc < 18.5){
-        echo "Vous avez un IMC de ${imc_string}. Vous etes trop maigre"
+        echo "Vous avez un IMC de ${imc}. Vous etes trop maigre"
     }
     else if (18.5 <= imc && imc < 25){
-        echo "Vous avez un IMC de ${imc_string}. Vous etes normal"
+        echo "Vous avez un IMC de ${imc}. Vous etes normal"
     }
     else if (25 <= imc && imc < 30){
-        echo "Vous avez un IMC de ${imc_string}. Vous etes en surpoids"
+        echo "Vous avez un IMC de ${imc}. Vous etes en surpoids"
     }
     else {
-        echo "Vous avez un IMC de ${imc_string}. Vous etes obese"
+        echo "Vous avez un IMC de ${imc}. Vous etes obese"
     }
 }
 
