@@ -407,7 +407,8 @@ pipeline
             if(mois == "Mars"){
               def taille = "${params.TAILLE}"
               def poids = "${params.POIDS}"
-              calculIMC(
+              calculIMC(taille, poids)
+            }
             printAvancement(mois, c1, c2, c3, today)
         }
       }
