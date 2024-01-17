@@ -40,7 +40,6 @@ pipeline
     {
       steps 
       {
-        {
         if (params.SKIP_BUILD) {
           echo 'Skipping builds...'
         }else{
