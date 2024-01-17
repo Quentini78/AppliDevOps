@@ -463,12 +463,15 @@ def printAvancement(String mois, String c1, String c2, String c3, int jour) {
     def nbTaches = 0
     if (verifChallengeMois(mois, c1)) {
         nbTaches = nbTaches + 1
+        echo "${c1} une tache en plus"
     }
     if (verifChallengeMois(mois, c2) && c2 != c1 && c2 != c3) {
         nbTaches = nbTaches + 1
+        echo "${c2} une tache en plus"
     }
     if (verifChallengeMois(mois, c3) && c3 != c1 && c3 != c2) {
         nbTaches = nbTaches + 1
+        echo "${c3} une tache en plus"
     }
     def stat = calculStat(nbTaches)
     printTempsRestant(jour , mois)
