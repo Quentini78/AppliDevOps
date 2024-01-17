@@ -445,7 +445,7 @@ def verifChallengeMois(String mois, String challenge) {
     return true
 }
 
-def Formatfloat(float nombre){
+def Formatfloat(double nombre){
   return String.format("%.2f", nombre)
 }
 
