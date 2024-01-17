@@ -439,7 +439,7 @@ def cutString(String input) {
 
 def verifChallengeMois(String mois, String challenge) {
     def partiesChallenge = cutString(challenge)
-    if (partiesChallenge[0] != mois || challenge == "Aucun") {
+    if (partiesChallenge[0] != mois) {
         return false
     }
     return true
@@ -461,13 +461,13 @@ def printTempsRestant(int today) {
 
 def printAvancement(String mois, String c1, String c2, String c3, int jour) {
     def nbTaches = 0
-    if (verifChallengeMois(mois, c1)) {
+    if (verifChallengeMois(mois, c1) && c1 != "Aucun") {
         nbTaches = nbTaches + 1
     }
-    if (verifChallengeMois(mois, c2) && c2 != c1 && c2 != c3) {
+    if (verifChallengeMois(mois, c2) && c2 != c1 && c2 != "Aucun") {
         nbTaches = nbTaches + 1
     }
-    if (verifChallengeMois(mois, c3) && c3 != c1 && c3 != c2) {
+    if (verifChallengeMois(mois, c3) && c3 != c1 && c3 != c2 && c3 != "Aucun") {
         nbTaches = nbTaches + 1
     }
     def stat = calculStat(nbTaches)
