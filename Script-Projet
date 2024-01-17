@@ -461,15 +461,15 @@ def calculIMC(int taillecm, int poids){
   def taille = taillecm/100
   imc = poids/(taille**2)
   if (imc < 18.5){
-      echo "Vous avez un IMC de ${imc}%. Vous etes trop maigre"
+      echo "Vous avez un IMC de ${imc}. Vous etes trop maigre"
   }
   elif (18.5 <= imc && imc < 25){
-      echo "Vous avez un IMC de ${imc}%. Vous etes normal"
+      echo "Vous avez un IMC de ${imc}. Vous etes normal"
   }
   elif (25 <= imc && imc < 30){
-      echo "Vous avez un IMC de ${imc}%. Vous etes en surpoids"
+      echo "Vous avez un IMC de ${imc}. Vous etes en surpoids"
   }
-  else{
-      echo "Vous avez un IMC de ${imc}%. Vous etes obese"
+  else {
+      echo "Vous avez un IMC de ${imc}. Vous etes obese"
   }
 }
